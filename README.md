@@ -21,8 +21,8 @@ Ensure you have the following installed:
 2. Create a virtual environment:
 
    ```bash
-   python -m venv env
-   source env/bin/activate  # On Windows: env\Scripts\activate
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
    ```
 
 3. Move into working directory
