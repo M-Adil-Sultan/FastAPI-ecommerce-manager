@@ -1,6 +1,6 @@
-# BoilerPlate-FastAPI
+# E-commerce Manager FastAPI
 
-Fundamental Architecture of FastAPI wit MySQL
+Ecommerce management app with inventory management and insights of stocks in Python FastAPI wit MySQL
 
 ## Requirements
 
@@ -14,7 +14,7 @@ Ensure you have the following installed:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/M-Adil-Sultan/fastapi-boilerplate
+   git clone https://github.com/M-Adil-Sultan/FastAPI-ecommerce-manager
    cd app
    ```
 
