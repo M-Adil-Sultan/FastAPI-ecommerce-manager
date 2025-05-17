@@ -38,8 +38,11 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Commit and push changes
+            - name: Commit and push changes
+        env:
+          TOKEN: ${{ secrets.GH_PAT }}
         run: |
+          git remote set-url origin https://x-access-token:${TOKEN}@github.com/${{ github.repository }}
           git add app/routers/__init__.py
           git commit -m "Bump version to $NEW_VERSION"
           git push origin HEAD:${{ github.ref_name }}
