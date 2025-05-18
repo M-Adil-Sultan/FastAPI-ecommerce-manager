@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String, Text, DECIMAL, ForeignKey, DateTime
 from sqlalchemy.orm import relationship
-from datetime import datetime
+from datetime import datetime, timezone
 from backend.database import Base
 
 class Product(Base):
@@ -11,6 +11,6 @@ class Product(Base):
     description = Column(Text)
     price = Column(DECIMAL(10, 2), nullable=False)
     category_id = Column(Integer, ForeignKey("categories.id"))
-    created_at = Column(DateTime, default=datetime.utcnow)
+    created_at = Column(DateTime, default=datetime.now(timezone.utc))
 
     category = relationship("Category")

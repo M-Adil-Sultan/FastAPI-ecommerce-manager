@@ -1,5 +1,5 @@
 import random
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from sqlalchemy.orm import Session
 from models import Category, Product, Inventory, Sale, SaleItem
 
@@ -40,7 +40,7 @@ def populate_db(db: Session) -> dict:
 
         store_names = ["Amazon", "Walmart"]
         for _ in range(10):
-            sale_date = datetime.utcnow() - timedelta(days=random.randint(0, 30))
+            sale_date = datetime.now(timezone.utc) - timedelta(days=random.randint(0, 30))
             store = random.choice(store_names)
             num_items = random.randint(1, 4)
             chosen_products = random.sample(products, num_items)
