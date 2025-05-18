@@ -1,3 +1,5 @@
-fastapi[standard]
+fastapi
+uvicorn
 sqlalchemy
-mysql-connector-python
+alembic
+pymysql
