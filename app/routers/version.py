@@ -5,7 +5,7 @@ from sqlalchemy import text
 from backend.database import get_db
 
 app = FastAPI()
-sample_router = APIRouter(prefix="/api", tags=["Version"])
+sample_router = APIRouter()
 
 @sample_router.get("/version", status_code=status.HTTP_200_OK)
 def get_version():
