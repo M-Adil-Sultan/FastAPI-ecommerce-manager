@@ -1,3 +1,7 @@
+👤 Author
+Adil Sultan
+Python Backend Developer
+
 # E-commerce Manager FastAPI
 
 FastAPI and MySQL based Ecommerce management app for managing e-commerce sales data, inventory, and product registration — built for powering admin dashboards with rich insights.
@@ -9,7 +13,7 @@ Ensure you have the following installed:
 - Python 3.8+
 - pip (Python package manager)
 
-## 🧱 Tech Stack
+## Tech Stack
 
 - **FastAPI** — Web framework
 - **SQLAlchemy** — ORM
@@ -75,12 +79,27 @@ Try it out and Execute
 POST api/populate-demo-data
 ```
 
+One time run populate-demo-data to populate Database
+
 ## API Endpoints
+
+**Product Registration**
+
+- POST api/products/
+  -- Register a new product with name, category, and price.
+  Sample Request Body
+  ```
+  {
+  "name": "Apple Watch Series 9",
+  "category_id": 1,
+  "price": 399.99
+   }
+  ```
 
 **Sales Analytics**
 
 - POST api/sales
-  ➤ Add New Sale respective to request body
+  -- Add New Sale respective to request body
   Sample Request body
 
 ```
@@ -91,18 +110,27 @@ POST api/populate-demo-data
    { "product_id": 1, "quantity": 2, "unit_price": 20.0 },
    { "product_id": 2, "quantity": 1, "unit_price": 50.0 }
  ]
+}
 
 ```
 
 - Get api/summary :
-  ➤ Total number of sales and total revenue.
+  -- Total number of sales and total revenue.
 
 - GET api/revenue?period=daily|weekly|monthly|yearly
-  ➤ Revenue breakdown by selected period.
+  -- Revenue breakdown by selected period.
 
 - GET api/by-filters?start_date=YYYY-MM-DD&end_date=YYYY-MM-DD&product_id=&category_id=
-  ➤ Sales filtered by product or category within a date range.
+  -- Sales filtered by product or category within a date range.
+  ```
   start_date=YYYY-MM-DD
   end_date=YYYY-MM-DD
   product_id=INT
   category_id=INT
+  ```
+  **Inventory Management**
+- GET api/status?low_stock_only=false|true
+  -- View all inventory records with false and low stocks alert with true query parameter
+
+- PUT api/update/{product_id}?new_quantity=
+  -- Update stock quantity for a product.
